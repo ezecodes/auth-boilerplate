@@ -85,12 +85,12 @@ The `package.json` file contains scripts that automate various tasks in your pro
 - `dev`: Starts the server in development mode using nodemon.
 - `webpack:dev`: Compiles JSX files using webpack in development mode.
 - `webpack:prod`: Compiles JSX files using webpack in production mode.
-- `dev`: Runs the server, watches CSS files, and compiles JSX files concurrently in development mode.
+- `all`: Runs the server, watches CSS files, and compiles JSX files concurrently in development mode.
 
 For example, to start the development server along with CSS and JSX compilation, you can run:
 
 ```sh
-npm run dev
+npm run all
 ```
 
 ### Is there an available frontend page already built?
