@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-background: #e8ecef;
+  --primary-color: #134254;
+  --secondary-color: #083344;
+}
+body {
+  @apply bg-[var(--main-background)];
+
+}
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+.modal {
+  @apply fixed backdrop-blur-sm z-50 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50;
+}
+.modal-content {
+  @apply bg-white mx-auto mt-24 p-8 border border-gray-300 w-96 rounded-lg shadow-md;
+}
+.modal-content h2 {
+  @apply text-[1.2rem] font-[700] text-center mb-[10px];
+}
+.modal-content > p {
+  @apply text-sm text-center mb-[10px];
+
+}
+
+.auth-wrapper {
+  @apply  max-w-md mx-auto mt-8 shadow-md p-6 rounded-md bg-white;
+}
+.auth-wrapper h2 {
+  @apply text-2xl font-bold mb-6 text-center;
+}
+.auth-form {
+  @apply space-y-4 ;
+}
+.auth-form label {
+  @apply block text-sm font-medium text-gray-700;
+}
+.auth-form input {
+  @apply mt-1 block w-full px-3 h-[40px] border border-solid border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+}
+.auth-form button {
+  @apply w-full bg-[var(--primary-color)] text-white h-[40px] px-4 rounded-md hover:bg-[var(--secondary-color)] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 flex justify-center items-center gap-x-[10px];
+}
+.oauth-wrapper > a {
+  @apply px-3 h-[40px] border border-solid rounded-md border-gray-300 shadow-sm cursor-pointer flex justify-center items-center gap-x-[10px]
+}
+.auth-form > div:last-of-type {
+  @apply flex items-center justify-center text-sm text-gray-700
+}
+.auth-form > div:last-of-type a, .subtext {
+  @apply text-[var(--primary-color)] underline
+}
+.auth_delimeter {
+  @apply text-center mt-5 font-[500] text-sm;
+}
