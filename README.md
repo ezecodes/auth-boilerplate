@@ -61,7 +61,7 @@ Buildkit integrates Webpack for efficient bundling of React components, ensuring
 Full API Documentation can be found here
 
 ```sh
-https://documenter.getpostman.com/view/34893980/2sA3JNc1u2#44410394-83a4-4e54-8c3a-4bb2f8132d71
+https://documenter.getpostman.com/view/32891465/2sA3Qs9XYw#a1990c13-75e3-4a81-b7d3-a849bf06a7df
 ```
 
 ### Setting Up Environment Variables
@@ -82,11 +82,10 @@ The `package.json` file contains scripts that automate various tasks in your pro
 
 - `start`: Starts the server in production mode.
 - `css`: Watches for changes in CSS files and compiles them using Tailwind CSS.
-- `dev-server`: Starts the server in development mode using nodemon.
-- `compile-jsx`: Compiles JSX files using webpack in development mode.
-- `build-jsx`: Compiles JSX files using webpack in production mode.
+- `dev`: Starts the server in development mode using nodemon.
+- `webpack:dev`: Compiles JSX files using webpack in development mode.
+- `webpack:prod`: Compiles JSX files using webpack in production mode.
 - `dev`: Runs the server, watches CSS files, and compiles JSX files concurrently in development mode.
-- `predev`: Installs all packages before running the dev command.
 
 For example, to start the development server along with CSS and JSX compilation, you can run:
 
@@ -96,7 +95,7 @@ npm run dev
 
 ### Is there an available frontend page already built?
 
-Yes. The Authentication pages are already built. You can find them in the `/views` and `/reactComponents` directories of the root directory.
+Yes. The Authentication pages are already built. You can find them in the `/views` and `/react` directories of the root directory.
 
 ## Folder Structure
 
@@ -115,7 +114,7 @@ Yes. The Authentication pages are already built. You can find them in the `/view
 - `package.json`
 - `public/`
 - `migrations/`
-- `reactComponents/`
+- `react/`
 - `README.md`
 - `server/`
 - `tailwind.config.js`
@@ -148,19 +147,13 @@ Yes. The Authentication pages are already built. You can find them in the `/view
 - `logger/` Directory containing logging configuration and utilities.
   - `index.js` Server logging configuration.
 - `middleware/` Directory containing middleware functions.
-  - `auth.js` Middleware for authentication.
   - `cors.js` Middleware for CORS configuration.
   - `error.js` Middleware for error handling.
   - `http-logger.js` Middleware for logging HTTP requests.
-  - `validations.js` Middleware for request validations.
-  - `app-security-headers.js` Middleware for server security configurations.
+  - `security-headers.js` Middleware for server security configurations.
 - `routes/` Directory containing route definitions.
   - `api/` Directory containing API route definitions.
-    - `auth.js` API route for authentication.
-    - `index.js` Main API route file.
-    - `user.js` API route for user.
-  - `pages/` Directory containing route definitions for rendering pages.
-    - `index.js` Route definition for the home page.
+  - `page/` Directory containing route definitions for rendering pages.
 - `utils/` Directory containing utility functions.
   - `core.js` Core utility functions.
   - `errors.js` Error handling utility functions.
