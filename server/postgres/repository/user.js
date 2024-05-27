@@ -2,6 +2,9 @@ const { Users } = require("../models");
 async function findUser({ query, attributes }) {
   return await Users.findOne({ where: query, attributes });
 }
+async function findUserById({ id, attributes }) {
+  return await Users.findByPk(id, { attributes });
+}
 async function createUser({ data }) {
   return await Users.create(data, { returning: true });
 }
@@ -31,6 +34,7 @@ module.exports = {
   findUser,
   createUser,
   updateUser,
+  findUserById,
   findAllUsers,
   destroyUser,
 };
