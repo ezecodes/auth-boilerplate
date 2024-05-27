@@ -17,8 +17,7 @@ function checkRequestValidationErrors(req, res, next) {
 }
 
 function genericIdValidator(req, res, next) {
-  // Add Other Unique specific IDs not captured by "id"
-  const id = req.params.id;
+  const id = req.params.id || req.params.user_id;
   if (!id || !validateUUID(id)) {
     return next(new ApiError("ID is invalid", 400));
   }
