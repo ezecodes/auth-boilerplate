@@ -169,10 +169,6 @@ To contribute to the project, follow these guidelines:
 
 Feel free to reach out if you have any questions or need further clarification on the project's structure and guidelines.
 
-## Usage
-
-Buildkit is designed to be flexible and customizable. You can add or remove features based on your project requirements. The starter template provides a solid foundation for building web applications.
-
 ## License
 
 Buildkit is released under the MIT License. See LICENSE for more information.
