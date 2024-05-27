@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@-webkit-keyframes color-change-2x{0%{color:#19dcea}100%{color:#b22cff}}@keyframes color-change-2x{0%{color:#19dcea}100%{color:#b22cff}}
+.color-change-2x{-webkit-animation:color-change-2x 2s linear infinite alternate both;animation:color-change-2x 2s linear infinite alternate both}
+
 :root {
   --main-background: #e8ecef;
   --primary-color: #134254;
@@ -10,6 +13,9 @@
 body {
   @apply bg-[var(--main-background)];
 
+}
+.subtext {
+  @apply text-[#d3d3d3] font-[300] text-[.9rem];
 }
 * {
   font-family: "Open Sans", sans-serif;
@@ -20,6 +26,9 @@ body {
   border: none;
 }
 
+.main {
+  @apply bg-[#1a2027] pb-[20px] text-[#fff] min-h-[100vh];
+}
 .modal {
   @apply fixed backdrop-blur-sm z-50 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50;
 }
@@ -35,7 +44,7 @@ body {
 }
 
 .auth-wrapper {
-  @apply  max-w-md mx-auto mt-8 shadow-md p-6 rounded-md bg-white;
+  @apply  max-w-[25.5rem] mx-auto mt-8 shadow-md p-6 rounded-md bg-white;
 }
 .auth-wrapper h2 {
   @apply text-2xl font-bold mb-6 text-center;
@@ -58,7 +67,7 @@ body {
 .auth-form > div:last-of-type {
   @apply flex items-center justify-center text-sm text-gray-700
 }
-.auth-form > div:last-of-type a, .subtext {
+.auth-form > div:last-of-type a {
   @apply text-[var(--primary-color)] underline
 }
 .auth_delimeter {

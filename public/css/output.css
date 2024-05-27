@@ -651,6 +651,20 @@ video {
   text-decoration-line: underline;
 }
 
+@keyframes color-change-2x{
+  0%{
+    color:#19dcea
+  }
+
+  100%{
+    color:#b22cff
+  }
+}
+
+.color-change-2x{
+  animation:color-change-2x 2s linear infinite alternate both
+}
+
 :root {
   --main-background: #e8ecef;
   --primary-color: #134254;
@@ -661,6 +675,13 @@ body {
   background-color: var(--main-background);
 }
 
+.subtext {
+  font-size: .9rem;
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(211 211 211 / var(--tw-text-opacity));
+}
+
 * {
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -668,6 +689,15 @@ body {
   box-sizing: border-box;
   outline: none;
   border: none;
+}
+
+.main {
+  min-height: 100vh;
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 32 39 / var(--tw-bg-opacity));
+  padding-bottom: 20px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .modal {
@@ -720,7 +750,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
-  max-width: 28rem;
+  max-width: 25.5rem;
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -848,7 +878,7 @@ body {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.auth-form > div:last-of-type a, .subtext {
+.auth-form > div:last-of-type a {
   color: var(--primary-color);
   text-decoration-line: underline;
 }
