@@ -1,7 +1,11 @@
 const { hash: bcryptHash } = require("bcrypt");
 const { sign: jwtSign } = require("jsonwebtoken");
 const { createTransport } = require("nodemailer");
+const formidable = require("formidable");
+const { PutObjectCommand } = require("@aws-sdk/client-s3");
+const { createReadStream } = require("fs");
 const { MAIL } = require("../config");
+const { s3Client } = require("../config/aws");
 const Logger = require("../logger");
 
 /**
@@ -103,6 +107,44 @@ async function sendEmail(options, callback) {
   }
 }
 
+function uploadImagesToBucket(files, bucketName, imageUploadDirectory) {
+  const imageFiles = Array.isArray(files) ? files : [files];
+  const result = imageFiles.map((file) => {
+    const name =
+      file.newFilename + "." + file.originalFilename.split(".").pop();
+
+    s3Client.send(
+      new PutObjectCommand({
+        Bucket: bucketName,
+        Key: `${bucketName}/${imageUploadDirectory}/${name}`,
+        Body: createReadStream(file.filepath),
+      })
+    );
+    return name;
+  });
+  return result;
+}
+
+function getFieldsAndImageFiles(req, cb) {
+  const form = new formidable.IncomingForm();
+  form.multiples = true;
+
+  form.parse(req, (err, fields, files) => {
+    Object.keys(fields).forEach((i) => {
+      fields[i] = fields[i][0];
+    });
+    if (!files.images) {
+      cb([err, fields, []]);
+    } else {
+      const imageFiles = Array.isArray(files.images)
+        ? files.images
+        : [files.images];
+
+      cb([err, fields, imageFiles]);
+    }
+  });
+}
+
 module.exports = {
   createJwtToken,
   sendEmail,
@@ -110,4 +152,6 @@ module.exports = {
   hashPassword,
   generateHashedAuthCode,
   getRandomInt,
+  getFieldsAndImageFiles,
+  uploadImagesToBucket,
 };
