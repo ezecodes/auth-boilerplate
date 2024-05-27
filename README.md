@@ -61,7 +61,7 @@ Buildkit integrates Webpack for efficient bundling of React components, ensuring
 Full API Documentation can be found here
 
 ```sh
-https://documenter.getpostman.com/view/34893980/2sA3JNc1u2#44410394-83a4-4e54-8c3a-4bb2f8132d71
+https://documenter.getpostman.com/view/32891465/2sA3Qs9XYw#a1990c13-75e3-4a81-b7d3-a849bf06a7df
 ```
 
 ### Setting Up Environment Variables
